@@ -43,19 +43,21 @@ const BonusSection = () => (
         {bonuses.map((b, i) => (
           <div
             key={i}
-            className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/15 rounded-2xl p-5 flex items-start gap-4 text-left shadow-sm"
+            className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/15 rounded-2xl p-4 text-left shadow-sm"
           >
-            <div className="bg-secondary/12 w-11 h-11 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-              <b.icon className="w-5 h-5 text-secondary" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-0.5">
-                <h3 className="font-heading font-bold text-foreground text-sm">{b.title}</h3>
-                <span className="text-urgency font-bold text-xs line-through">{b.value}</span>
+            <div className="flex items-start gap-3">
+              <div className="bg-secondary/12 w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <b.icon className="w-5 h-5 text-secondary" />
               </div>
-              <p className="text-muted-foreground text-xs leading-relaxed">{b.desc}</p>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-heading font-bold text-foreground text-sm leading-tight">{b.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed mt-0.5">{b.desc}</p>
+              </div>
             </div>
-            <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">GRÁTIS</span>
+            <div className="flex items-center justify-between mt-2 pt-2 border-t border-primary/10">
+              <span className="text-urgency font-bold text-xs line-through">{b.value}</span>
+              <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-full">GRÁTIS</span>
+            </div>
           </div>
         ))}
       </div>
