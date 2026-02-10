@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ["Outfit", "sans-serif"],
+        body: ["Nunito", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -77,16 +81,11 @@ export default {
           "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 hsl(152 65% 42% / 0.4)" },
           "50%": { transform: "scale(1.04)", boxShadow: "0 0 0 12px hsl(152 65% 42% / 0)" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-6px)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-grow": "pulse-grow 2.5s ease-in-out infinite",
-        "float": "float 3s ease-in-out infinite",
       },
     },
   },
