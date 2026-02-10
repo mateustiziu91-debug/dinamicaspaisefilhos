@@ -1,9 +1,69 @@
-import { useState } from "react";
-import { Play } from "lucide-react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import CTAButton from "./CTAButton";
 
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
+
+const YOUTUBE_VIDEO_ID = "nH7Tdx3XOyE";
+
 const HeroSection = () => {
-  const [started, setStarted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [apiReady, setApiReady] = useState(false);
+  const playerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Load YouTube IFrame API
+  useEffect(() => {
+    if (window.YT && window.YT.Player) {
+      setApiReady(true);
+      return;
+    }
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+    window.onYouTubeIframeAPIReady = () => setApiReady(true);
+  }, []);
+
+  // Create player once API is ready
+  useEffect(() => {
+    if (!apiReady || playerRef.current) return;
+    playerRef.current = new window.YT.Player("yt-player", {
+      videoId: YOUTUBE_VIDEO_ID,
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        modestbranding: 1,
+        rel: 0,
+        showinfo: 0,
+        loop: 1,
+        playlist: YOUTUBE_VIDEO_ID,
+        playsinline: 1,
+      },
+      events: {
+        onReady: (e: any) => e.target.playVideo(),
+      },
+    });
+  }, [apiReady]);
+
+  const handleUnmute = useCallback(() => {
+    const p = playerRef.current;
+    if (!p) return;
+    if (muted) {
+      p.seekTo(0, true);
+      p.unMute();
+      p.setVolume(100);
+      setMuted(false);
+    } else {
+      p.mute();
+      setMuted(true);
+    }
+  }, [muted]);
 
   return (
     <section className="bg-background pt-0 pb-10 px-4">
@@ -31,32 +91,33 @@ const HeroSection = () => {
         </p>
 
         {/* VSL 9:16 */}
-        <div className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden mb-8 shadow-2xl border border-foreground/10 bg-black">
-          {!started && (
+        <div
+          ref={containerRef}
+          className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden mb-8 shadow-2xl border border-foreground/10 bg-black"
+        >
+          <div id="yt-player" className="absolute inset-0 w-full h-full" />
+
+          {/* Unmute overlay */}
+          {muted && (
             <div
               className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer z-10"
-              onClick={() => setStarted(true)}
+              onClick={handleUnmute}
             >
-              {/* Wistia thumbnail */}
-              <img
-                src="https://fast.wistia.com/embed/medias/74msw27hzz/swatch"
-                className="absolute inset-0 w-full h-full object-cover"
-                alt="Video thumbnail"
-              />
-              <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2 z-10">
-                <Play className="w-10 h-10 text-white" />
-                <p className="text-white font-extrabold text-sm">Clique para assistir</p>
+              <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2 animate-pulse">
+                <VolumeX className="w-10 h-10 text-white" />
+                <p className="text-white font-extrabold text-sm">🔊 Ativar som</p>
               </div>
             </div>
           )}
-          {started && (
-            <iframe
-              src="https://fast.wistia.net/embed/iframe/74msw27hzz?autoPlay=true&controlsVisibleOnLoad=false&preload=auto&silentAutoPlay=true"
-              className="w-full h-full absolute inset-0"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              frameBorder="0"
-            />
+
+          {/* Small mute toggle when unmuted */}
+          {!muted && (
+            <button
+              onClick={handleUnmute}
+              className="absolute bottom-4 right-4 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-colors"
+            >
+              <Volume2 className="w-5 h-5" />
+            </button>
           )}
         </div>
 
