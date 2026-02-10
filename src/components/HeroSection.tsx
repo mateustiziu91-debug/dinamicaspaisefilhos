@@ -32,19 +32,26 @@ const HeroSection = () => {
 
         {/* VSL 9:16 */}
         <div className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden mb-8 shadow-2xl border border-foreground/10 bg-black">
-          {!started ? (
+          {!started && (
             <div
               className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer z-10"
               onClick={() => setStarted(true)}
             >
-              <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2">
+              {/* Wistia thumbnail */}
+              <img
+                src="https://fast.wistia.com/embed/medias/74msw27hzz/swatch"
+                className="absolute inset-0 w-full h-full object-cover"
+                alt="Video thumbnail"
+              />
+              <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2 z-10">
                 <Play className="w-10 h-10 text-white" />
                 <p className="text-white font-extrabold text-sm">Clique para assistir</p>
               </div>
             </div>
-          ) : (
+          )}
+          {started && (
             <iframe
-              src="https://fast.wistia.net/embed/iframe/74msw27hzz?autoPlay=true&controlsVisibleOnLoad=false"
+              src="https://fast.wistia.net/embed/iframe/74msw27hzz?autoPlay=true&controlsVisibleOnLoad=false&preload=auto&silentAutoPlay=true"
               className="w-full h-full absolute inset-0"
               allow="autoplay; fullscreen"
               allowFullScreen
