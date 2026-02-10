@@ -32,18 +32,24 @@ const HeroSection = () => {
 
         {/* VSL */}
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden mb-8 shadow-2xl border border-foreground/10">
+          <video
+            src="https://i.imgur.com/8zdeQyw.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            playsInline
+            muted={muted}
+          />
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
+            className="absolute inset-0 flex items-end justify-center pb-4 cursor-pointer"
             onClick={() => setMuted(!muted)}
           >
-            <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2">
-              <p className="text-white font-extrabold text-sm">Clique aqui</p>
+            <div className="bg-black/60 hover:bg-black/80 transition-colors rounded-full p-3">
               {muted ? (
-                <VolumeX className="w-10 h-10 text-white" />
+                <VolumeX className="w-6 h-6 text-white" />
               ) : (
-                <Volume2 className="w-10 h-10 text-white" />
+                <Volume2 className="w-6 h-6 text-white" />
               )}
-              <p className="text-white font-extrabold text-sm">para ativar o som</p>
             </div>
           </div>
         </div>
