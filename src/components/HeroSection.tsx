@@ -6,13 +6,16 @@ const HeroSection = () => {
   const [muted, setMuted] = useState(true);
 
   return (
-    <section className="bg-background pt-6 pb-10 px-4">
-      <div className="container max-w-2xl mx-auto text-center">
-        <div className="inline-block bg-urgency text-urgency-foreground text-xs font-extrabold px-5 py-1.5 rounded-full mb-6 shadow-sm tracking-wide">
-          🔥 DESCONTO SÓ HOJE — {new Date().toLocaleDateString("pt-BR")}
-        </div>
+    <section className="bg-background pt-0 pb-10 px-4">
+      {/* Full-width discount banner */}
+      <div className="w-screen relative left-1/2 -translate-x-1/2 bg-urgency text-urgency-foreground text-center py-2.5 px-4 mb-6">
+        <p className="text-xs md:text-sm font-extrabold tracking-wide">
+          🔥 DESCONTO SÓ HOJE — {new Date().toLocaleDateString("pt-BR")} 🔥
+        </p>
+      </div>
 
-        <h1 className="font-heading text-[1.8rem] md:text-[2.5rem] lg:text-[2.8rem] leading-[1.1] font-black mb-4 tracking-tight">
+      <div className="container max-w-2xl mx-auto text-center">
+        <h1 className="font-heading text-[1.7rem] md:text-[2.5rem] leading-[1.1] font-black mb-4 tracking-tight">
           Seu Filho Está Crescendo…{" "}
           <span className="text-urgency">e Se Afastando?</span>
         </h1>
