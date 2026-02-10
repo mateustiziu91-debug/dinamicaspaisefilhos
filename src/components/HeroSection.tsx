@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Play } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const HeroSection = () => {
   const [muted, setMuted] = useState(true);
+  const [started, setStarted] = useState(false);
 
   return (
     <section className="bg-background pt-0 pb-10 px-4">
@@ -32,26 +33,41 @@ const HeroSection = () => {
 
         {/* VSL */}
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden mb-8 shadow-2xl border border-foreground/10">
-          <video
-            src="https://i.imgur.com/8zdeQyw.mp4"
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            playsInline
-            muted={muted}
-          />
-          <div
-            className="absolute inset-0 flex items-end justify-center pb-4 cursor-pointer"
-            onClick={() => setMuted(!muted)}
-          >
-            <div className="bg-black/60 hover:bg-black/80 transition-colors rounded-full p-3">
-              {muted ? (
-                <VolumeX className="w-6 h-6 text-white" />
-              ) : (
-                <Volume2 className="w-6 h-6 text-white" />
-              )}
+          {!started ? (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
+              onClick={() => setStarted(true)}
+            >
+              <div className="bg-urgency/90 hover:bg-urgency transition-colors rounded-2xl px-8 py-6 flex flex-col items-center gap-2">
+                <Play className="w-10 h-10 text-white" />
+                <p className="text-white font-extrabold text-sm">Clique para assistir</p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <>
+              <video
+                src="https://i.imgur.com/8zdeQyw.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                playsInline
+                muted={muted}
+                crossOrigin="anonymous"
+              />
+              <div
+                className="absolute inset-0 flex items-end justify-center pb-4 cursor-pointer"
+                onClick={() => setMuted(!muted)}
+              >
+                <div className="bg-black/60 hover:bg-black/80 transition-colors rounded-full p-3">
+                  {muted ? (
+                    <VolumeX className="w-6 h-6 text-white" />
+                  ) : (
+                    <Volume2 className="w-6 h-6 text-white" />
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         <CTAButton />
