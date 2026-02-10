@@ -1,62 +1,97 @@
-import { Check, ShoppingCart } from "lucide-react";
+import { Check, ShoppingCart, X } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 
-const included = [
-  "80+ Dinâmicas de Conexão",
-  "Organizadas por situação e objetivo",
-  "Acesso digital imediato",
-  "4 Bônus Exclusivos (valor R$168)",
-  "Garantia de 7 dias",
+const basicFeatures = [
+  { text: "80+ Dinâmicas PDF", included: true },
+  { text: "Organizadas por situação", included: true },
+  { text: "Acesso digital", included: true },
+  { text: "Garantia de 7 dias", included: true },
+  { text: "Sem os bônus exclusivos", included: false },
+];
+
+const premiumFeatures = [
+  { text: "80+ Dinâmicas PDF", included: true },
+  { text: "Organizadas por situação", included: true },
+  { text: "Acesso digital", included: true },
+  { text: "BÔNUS: Atividades de 10 Min", included: true, bonus: true },
+  { text: "BÔNUS: 30 Dinâmicas Cristãs", included: true, bonus: true },
+  { text: "BÔNUS: Guia de Conversas", included: true, bonus: true },
+  { text: "BÔNUS: Desafio 30 Dias", included: true, bonus: true },
+  { text: "Garantia de 7 dias", included: true },
 ];
 
 const OfferSection = () => (
-  <section id="oferta" className="py-14 px-4 bg-background">
-    <div className="container max-w-md mx-auto">
+  <section id="oferta" className="py-14 px-4 bg-muted">
+    <div className="container max-w-2xl mx-auto">
       <CountdownTimer />
 
-      <div className="mt-6 bg-white rounded-3xl border-2 border-primary/40 shadow-[0_8px_40px_hsl(152_55%_45%/0.12)] p-6 text-center relative overflow-hidden">
-        {/* Ribbon */}
-        <div className="bg-secondary text-secondary-foreground text-[11px] font-bold px-5 py-1 rounded-full inline-block mb-5">
-          MAIS POPULAR
-        </div>
+      <div className="grid md:grid-cols-2 gap-4 mt-8">
+        {/* Basic */}
+        <div className="bg-white rounded-3xl border border-border shadow-sm p-6 text-center">
+          <h3 className="font-heading font-black text-xl mb-3">Plano Básico</h3>
+          <p className="text-muted-foreground text-sm line-through leading-none">R$97</p>
+          <p className="text-3xl font-black text-foreground mb-0.5">R$10,00</p>
+          <p className="text-xs text-muted-foreground mb-1">pagamento único</p>
+          <p className="text-xs text-primary font-bold mb-5">Você economiza R$87,00</p>
 
-        <h3 className="font-bold text-xl mb-3">Plano Completo</h3>
-
-        <p className="text-muted-foreground text-sm line-through leading-none">De R$97</p>
-        <p className="text-[2.5rem] font-black text-primary leading-none mb-0.5">R$17,90</p>
-        <p className="text-xs text-muted-foreground mb-0.5">pagamento único</p>
-        <p className="text-xs text-primary font-bold mb-6">
-          Você economiza R$79,10 + R$168 em bônus
-        </p>
-
-        <div className="bg-muted/60 rounded-xl p-3 mb-4 text-left">
-          <p className="text-[11px] text-muted-foreground text-center mb-2">
-            +1.200 pais já escolheram essa oferta
-          </p>
-        </div>
-
-        <div className="text-left space-y-2.5 mb-6">
-          {included.map((item, i) => (
-            <div key={i} className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <Check className="w-3 h-3 text-primary" />
+          <div className="text-left space-y-2.5 mb-6">
+            {basicFeatures.map((f, i) => (
+              <div key={i} className="flex items-center gap-2.5">
+                {f.included ? (
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                ) : (
+                  <X className="w-4 h-4 text-urgency shrink-0" />
+                )}
+                <span className={`text-sm ${f.included ? "text-foreground" : "text-muted-foreground"}`}>{f.text}</span>
               </div>
-              <span className="text-sm text-foreground">{item}</span>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <a
+            href="#"
+            className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-3.5 rounded-full shadow-md cursor-pointer hover:brightness-110 active:scale-95 transition-all"
+          >
+            <ShoppingCart className="w-4 h-4" />
+            QUERO COMPRAR!
+          </a>
         </div>
 
-        <a
-          href="#"
-          className="group flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-base w-full py-4 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer transition-all hover:brightness-110 active:scale-95"
-        >
-          <ShoppingCart className="w-5 h-5" />
-          QUERO COMPRAR!
-        </a>
+        {/* Premium */}
+        <div className="bg-white rounded-3xl border-2 border-secondary shadow-[0_8px_40px_hsl(268_58%_58%/0.12)] p-6 text-center relative">
+          <div className="bg-secondary text-secondary-foreground text-[10px] font-bold px-4 py-1 rounded-full inline-block mb-3">
+            MAIS POPULAR
+          </div>
+          <h3 className="font-heading font-black text-xl mb-3">Plano Premium</h3>
+          <p className="text-muted-foreground text-sm line-through leading-none">R$256</p>
+          <p className="text-3xl font-black text-secondary mb-0.5">R$17,90</p>
+          <p className="text-xs text-muted-foreground mb-1">pagamento único</p>
+          <p className="text-xs text-secondary font-bold mb-2">Você economiza R$238 + R$168 em bônus</p>
 
-        <p className="text-[11px] text-muted-foreground mt-3">
-          ✅ Acesso imediato após a compra
-        </p>
+          <div className="bg-muted rounded-lg py-1.5 px-3 mb-5">
+            <p className="text-[11px] text-muted-foreground">+1.200 pais já escolheram essa oferta</p>
+          </div>
+
+          <div className="text-left space-y-2.5 mb-6">
+            {premiumFeatures.map((f, i) => (
+              <div key={i} className="flex items-center gap-2.5">
+                {f.bonus ? (
+                  <span className="text-sm">🎁</span>
+                ) : (
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                )}
+                <span className={`text-sm ${f.bonus ? "text-secondary font-semibold" : "text-foreground"}`}>{f.text}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="#"
+            className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-3.5 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer hover:brightness-110 active:scale-95 transition-all"
+          >
+            <ShoppingCart className="w-4 h-4" />
+            QUERO COMPRAR!
+          </a>
+        </div>
       </div>
     </div>
   </section>
