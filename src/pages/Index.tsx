@@ -10,7 +10,7 @@ import OfferSection from "@/components/OfferSection";
 import FinalCTA from "@/components/FinalCTA";
 
 const Index = () => (
-  <main className="min-h-screen">
+  <main className="min-h-screen overflow-x-hidden">
     <HeroSection />
     <PainSection />
     <SolutionSection />
@@ -21,6 +21,10 @@ const Index = () => (
     <TestimonialSection />
     <OfferSection />
     <FinalCTA />
+    <footer className="bg-foreground text-white/40 text-center py-6 px-4 text-xs">
+      <p>© {new Date().getFullYear()} Conexão em Pouco Tempo. Todos os direitos reservados.</p>
+      <p className="mt-1">Este produto não substitui acompanhamento profissional.</p>
+    </footer>
   </main>
 );
 

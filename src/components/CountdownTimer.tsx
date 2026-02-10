@@ -15,10 +15,11 @@ const CountdownTimer = () => {
 
     const tick = () => {
       const diff = Math.max(0, end - Date.now());
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      setTime({ hours: h, minutes: m, seconds: s });
+      setTime({
+        hours: Math.floor(diff / 3600000),
+        minutes: Math.floor((diff % 3600000) / 60000),
+        seconds: Math.floor((diff % 60000) / 1000),
+      });
     };
 
     tick();
@@ -29,17 +30,17 @@ const CountdownTimer = () => {
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <div className="bg-urgency text-urgency-foreground rounded-2xl p-5 text-center">
-      <p className="font-bold text-sm mb-3">⏰ OFERTA ESPECIAL EXPIRA EM:</p>
-      <div className="flex justify-center gap-3">
+    <div className="bg-gradient-to-r from-urgency to-red-500 text-urgency-foreground rounded-2xl p-4 text-center shadow-lg">
+      <p className="font-bold text-xs tracking-wider mb-2">⏰ OFERTA ESPECIAL EXPIRA EM:</p>
+      <div className="flex justify-center gap-2">
         {[
           { val: time.hours, label: "HORAS" },
           { val: time.minutes, label: "MIN" },
           { val: time.seconds, label: "SEG" },
         ].map((item) => (
-          <div key={item.label} className="bg-background/20 rounded-xl px-4 py-2 min-w-[70px]">
-            <span className="text-3xl font-bold block">{pad(item.val)}</span>
-            <span className="text-xs font-medium">{item.label}</span>
+          <div key={item.label} className="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 min-w-[65px]">
+            <span className="text-2xl md:text-3xl font-black block leading-none">{pad(item.val)}</span>
+            <span className="text-[10px] font-semibold tracking-wider opacity-80">{item.label}</span>
           </div>
         ))}
       </div>
