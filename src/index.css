@@ -2,46 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 220 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 220 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 150 60% 42%;
+    --primary: 152 55% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 55% 55%;
+    --secondary: 268 58% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 150 20% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 150 30% 97%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 35 95% 55%;
+    --accent: 268 58% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 80% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 15% 90%;
-    --input: 150 15% 90%;
-    --ring: 150 60% 42%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 152 55% 45%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --cta: 150 70% 45%;
+    --cta: 152 65% 42%;
     --cta-foreground: 0 0% 100%;
-    --urgency: 0 80% 55%;
+    --urgency: 4 80% 58%;
     --urgency-foreground: 0 0% 100%;
-    --bonus: 270 55% 55%;
-    --highlight: 45 100% 55%;
+    --warm: 38 100% 50%;
   }
 }
 
@@ -52,10 +51,13 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+}
 
-  h1, h2, h3 {
-    font-family: 'DM Serif Display', serif;
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
   }
 }

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { BookOpen, Moon, Gamepad2, Ear, MessageCircleQuestion, ShieldCheck, CalendarHeart } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -13,46 +12,37 @@ const features = [
 ];
 
 const SolutionSection = () => (
-  <section className="py-12 px-4 bg-gradient-to-b from-background to-muted">
+  <section className="py-14 px-4 bg-background">
     <div className="container max-w-2xl mx-auto text-center">
-      <p className="text-sm text-muted-foreground mb-2">Foi por isso que criamos:</p>
-      <h2 className="font-display text-2xl md:text-3xl mb-2">
+      <p className="text-muted-foreground text-sm font-medium mb-1">Foi por isso que criamos:</p>
+      <h2 className="font-display text-2xl md:text-3xl font-black mb-1">
         📘 Conexão em Pouco Tempo
       </h2>
-      <p className="text-primary font-semibold text-lg mb-2">
+      <p className="text-primary font-bold text-base md:text-lg mb-2">
         80+ Dinâmicas Prontas Para Aproximar Pais e Filhos
       </p>
-      <p className="text-muted-foreground mb-8">
-        Um material direto ao ponto, prático e fácil de aplicar.<br />
-        Sem teoria. Sem psicologês. Sem enrolação.
+      <p className="text-muted-foreground text-sm mb-10 max-w-md mx-auto">
+        Direto ao ponto, prático e fácil de aplicar. Sem teoria. Sem psicologês. Sem enrolação.
       </p>
 
-      <div className="w-12 h-1 bg-primary mx-auto mb-8 rounded-full" />
+      <h3 className="font-bold text-lg md:text-xl mb-1">O Que Você Vai Receber</h3>
+      <div className="w-10 h-1 bg-primary mx-auto rounded-full mb-6" />
 
-      <h3 className="font-display text-xl md:text-2xl mb-6">O Que Você Vai Encontrar</h3>
-
-      <div className="grid gap-4 mb-8">
+      <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {features.map((f, i) => (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="bg-card rounded-xl border p-4 flex items-center gap-4 shadow-sm"
+            className="bg-muted rounded-xl p-4 flex items-center gap-3 border border-border shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="bg-secondary/10 p-3 rounded-full shrink-0">
+            <div className="bg-secondary/15 p-2.5 rounded-full shrink-0">
               <f.icon className="w-5 h-5 text-secondary" />
             </div>
-            <p className="text-foreground font-medium text-left">{f.text}</p>
-          </motion.div>
+            <p className="text-foreground font-medium text-sm text-left">{f.text}</p>
+          </div>
         ))}
       </div>
 
-      <p className="text-sm text-muted-foreground mb-6">
-        Tudo organizado por situação e objetivo.
-      </p>
-
+      <p className="text-xs text-muted-foreground mb-6">Tudo organizado por situação e objetivo.</p>
       <CTAButton />
     </div>
   </section>

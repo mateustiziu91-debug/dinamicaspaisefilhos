@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -20,34 +19,33 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => (
-  <section className="py-12 px-4 bg-muted">
+  <section className="py-14 px-4 bg-muted">
     <div className="container max-w-3xl mx-auto text-center">
-      <h2 className="font-display text-2xl md:text-3xl mb-2">
-        O Que Os Pais Dizem
-      </h2>
-      <div className="w-12 h-1 bg-primary mx-auto mb-8 rounded-full" />
+      <h2 className="font-bold text-xl md:text-2xl mb-1">O Que Os Pais Dizem</h2>
+      <div className="w-10 h-1 bg-primary mx-auto rounded-full mb-8" />
 
       <div className="grid md:grid-cols-3 gap-4">
         {testimonials.map((t, i) => (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-2xl border p-5 text-left shadow-sm"
+            className="bg-white rounded-2xl border border-border p-5 text-left shadow-sm"
           >
             <div className="flex gap-0.5 mb-3">
               {Array(5).fill(0).map((_, j) => (
-                <Star key={j} className="w-4 h-4 fill-highlight text-highlight" />
+                <Star key={j} className="w-3.5 h-3.5 fill-warm text-warm" />
               ))}
             </div>
-            <p className="text-sm text-foreground mb-4 italic">"{t.text}"</p>
-            <div>
-              <p className="font-bold text-foreground text-sm">{t.name}</p>
-              <p className="text-xs text-muted-foreground">{t.role}</p>
+            <p className="text-xs text-foreground mb-4 leading-relaxed italic">"{t.text}"</p>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xs font-bold">
+                {t.name[0]}
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-xs">{t.name}</p>
+                <p className="text-[11px] text-muted-foreground">{t.role}</p>
+              </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

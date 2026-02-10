@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Clock, Cross, MessageCircle, CalendarCheck } from "lucide-react";
 
 const bonuses = [
@@ -29,38 +28,36 @@ const bonuses = [
 ];
 
 const BonusSection = () => (
-  <section className="py-12 px-4 bg-background">
+  <section className="py-14 px-4 bg-background">
     <div className="container max-w-2xl mx-auto text-center">
-      <h2 className="font-display text-2xl md:text-3xl mb-1">
-        Bônus Exclusivos –{" "}
-        <span className="text-urgency">Valor R$168</span>
+      <h2 className="font-display text-2xl md:text-3xl font-black mb-1">
+        Bônus Exclusivos
       </h2>
-      <p className="text-primary font-bold text-xl mb-8">(Hoje Grátis!)</p>
+      <p className="text-sm text-muted-foreground mb-1">
+        Valor Total: <span className="text-urgency font-bold line-through">R$168</span>
+      </p>
+      <p className="text-primary font-extrabold text-xl mb-8">(Hoje Grátis!)</p>
 
-      <div className="grid gap-5 mb-8">
+      <div className="space-y-4 mb-8">
         {bonuses.map((b, i) => (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="bg-muted border-2 border-primary/20 rounded-2xl p-6 text-center"
+            className="relative bg-gradient-to-br from-muted to-white border-2 border-primary/15 rounded-2xl p-5 text-center shadow-sm"
           >
-            <div className="bg-secondary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-              <b.icon className="w-6 h-6 text-secondary" />
+            <div className="bg-secondary/15 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+              <b.icon className="w-5 h-5 text-secondary" />
             </div>
-            <h3 className="font-bold text-foreground mb-1">{b.title}</h3>
-            <p className="text-urgency font-bold text-sm line-through mb-1">{b.value}</p>
-            <p className="text-muted-foreground text-sm">{b.desc}</p>
-          </motion.div>
+            <h3 className="font-bold text-foreground text-sm mb-1 leading-snug">{b.title}</h3>
+            <p className="text-urgency font-bold text-xs line-through mb-1">{b.value}</p>
+            <p className="text-muted-foreground text-xs">{b.desc}</p>
+          </div>
         ))}
       </div>
 
-      <div className="bg-cta/10 border-2 border-cta rounded-2xl p-5">
-        <p className="font-bold text-foreground">
+      <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/30 rounded-2xl p-4 inline-block">
+        <p className="font-bold text-foreground text-sm">
           Total em Bônus: <span className="text-urgency line-through">R$168</span>{" "}
-          <span className="text-primary text-xl font-extrabold">GRÁTIS HOJE!</span>
+          <span className="text-primary text-lg font-black">GRÁTIS HOJE!</span>
         </p>
       </div>
     </div>
