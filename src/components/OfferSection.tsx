@@ -76,7 +76,7 @@ const OfferSection = () => {
             </div>
 
             <a
-              href="#"
+              href="https://ggcheckout.com.br/checkout/v5/lehzbiappaSqrWX8VX0s"
               className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-4 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer hover:brightness-110 active:scale-95 transition-all"
             >
               <ShoppingCart className="w-5 h-5" />
@@ -106,12 +106,12 @@ const OfferSection = () => {
               ))}
             </div>
 
-            <button
-              onClick={() => setShowPopup(true)}
+            <a
+              href="https://www.ggcheckout.com/checkout/v5/0WXgFXAbhlySK99UlqkI"
               className="flex items-center justify-center gap-2 bg-muted text-foreground font-bold text-sm w-full py-3 rounded-full border border-border cursor-pointer hover:bg-muted/80 active:scale-95 transition-all"
             >
               Quero o Básico
-            </button>
+            </a>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ const OfferSection = () => {
 
               {/* CTA */}
               <a
-                href="#"
+                href="https://ggcheckout.com.br/checkout/v5/lehzbiappaSqrWX8VX0s"
                 className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-4 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer hover:brightness-110 active:scale-95 transition-all mb-2"
               >
                 <ShoppingCart className="w-5 h-5" />
@@ -164,7 +164,7 @@ const OfferSection = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.ggcheckout.com/checkout/v5/0WXgFXAbhlySK99UlqkI"
                 className="block text-center text-xs text-muted-foreground underline hover:text-foreground transition-colors py-1"
               >
                 Não, obrigado. Quero apenas o Básico por R$10,00
