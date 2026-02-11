@@ -30,10 +30,10 @@ const OfferSection = () => {
 
             <div className="bg-muted rounded-2xl py-4 px-3 mb-4">
               <p className="text-muted-foreground text-sm line-through leading-none mb-1">De R$97,00</p>
-              <p className="text-4xl font-black text-secondary mb-0.5">R$10,00</p>
+              <p className="text-4xl font-black text-secondary mb-0.5">R$9,90</p>
               <p className="text-xs text-muted-foreground">pagamento único</p>
               <div className="mt-2 inline-block bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full">
-                Economize R$246 + R$168 em bônus grátis
+                Economize R$87,10 + R$168 em bônus grátis
               </div>
             </div>
 
@@ -61,7 +61,7 @@ const OfferSection = () => {
               className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-4 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer hover:brightness-110 active:scale-95 transition-all"
             >
               <ShoppingCart className="w-5 h-5" />
-              QUERO GARANTIR POR R$10!
+              QUERO GARANTIR POR R$9,90!
             </a>
             <p className="text-[10px] text-muted-foreground mt-2">🔒 Pagamento 100% seguro</p>
           </div>
