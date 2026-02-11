@@ -29,7 +29,7 @@ const OfferSection = () => {
             <p className="text-muted-foreground text-xs mb-3">Tudo incluso + todos os bônus exclusivos</p>
 
             <div className="bg-muted rounded-2xl py-4 px-3 mb-4">
-              <p className="text-muted-foreground text-sm line-through leading-none mb-1">De R$256,00</p>
+              <p className="text-muted-foreground text-sm line-through leading-none mb-1">De R$97,00</p>
               <p className="text-4xl font-black text-secondary mb-0.5">R$10,00</p>
               <p className="text-xs text-muted-foreground">pagamento único</p>
               <div className="mt-2 inline-block bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full">
