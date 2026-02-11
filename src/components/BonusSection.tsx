@@ -52,7 +52,7 @@ const BonusSection = () => (
               <img
                 src={b.image}
                 alt={b.title}
-                className="w-1/2 h-56 object-cover rounded-xl shadow-md shrink-0"
+                className="w-[55%] sm:w-1/2 h-56 object-cover rounded-xl shadow-md shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <h3 className="font-heading font-bold text-foreground text-sm leading-tight">{b.title}</h3>
