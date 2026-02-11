@@ -1,27 +1,30 @@
-import { Clock, Cross, MessageCircle, CalendarCheck } from "lucide-react";
 import CTAButton from "./CTAButton";
+import bonusAtividades from "@/assets/bonus-atividades-10min.jpg";
+import bonusCristas from "@/assets/bonus-dinamicas-cristas.jpg";
+import bonusConversas from "@/assets/bonus-guia-conversas.jpg";
+import bonusDesafio from "@/assets/bonus-desafio-30dias.jpg";
 
 const bonuses = [
   {
-    icon: Clock,
+    image: bonusAtividades,
     title: "Atividades de 10 Minutos",
     desc: "Perfeito para dias corridos. Aproxime-se do seu filho mesmo com pouco tempo.",
     value: "R$37",
   },
   {
-    icon: Cross,
+    image: bonusCristas,
     title: "30 Dinâmicas Cristãs",
     desc: "Com versículo, reflexão e aplicação prática para famílias de fé.",
     value: "R$47",
   },
   {
-    icon: MessageCircle,
+    image: bonusConversas,
     title: "Guia de Conversas que Criam Confiança",
     desc: "Como falar sobre escola, amigos, internet e conflitos sem afastar seu filho.",
     value: "R$37",
   },
   {
-    icon: CalendarCheck,
+    image: bonusDesafio,
     title: "Desafio 30 Dias de Reconexão",
     desc: "Um plano passo a passo para restaurar o vínculo em 1 mês.",
     value: "R$47",
@@ -45,18 +48,20 @@ const BonusSection = () => (
             key={i}
             className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/15 rounded-2xl p-4 text-left shadow-sm"
           >
-            <div className="flex items-start gap-3">
-              <div className="bg-secondary/12 w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                <b.icon className="w-5 h-5 text-secondary" />
-              </div>
+            <div className="flex items-start gap-4">
+              <img
+                src={b.image}
+                alt={b.title}
+                className="w-20 h-[106px] object-cover rounded-xl shadow-md shrink-0"
+              />
               <div className="flex-1 min-w-0">
                 <h3 className="font-heading font-bold text-foreground text-sm leading-tight">{b.title}</h3>
-                <p className="text-muted-foreground text-xs leading-relaxed mt-0.5">{b.desc}</p>
+                <p className="text-muted-foreground text-xs leading-relaxed mt-1">{b.desc}</p>
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-urgency font-bold text-xs line-through">{b.value}</span>
+                  <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-full">GRÁTIS</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center justify-between mt-2 pt-2 border-t border-primary/10">
-              <span className="text-urgency font-bold text-xs line-through">{b.value}</span>
-              <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-full">GRÁTIS</span>
             </div>
           </div>
         ))}
