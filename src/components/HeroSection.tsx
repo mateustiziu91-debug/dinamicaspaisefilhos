@@ -76,18 +76,14 @@ const HeroSection = () => {
 
       <div className="container max-w-2xl mx-auto text-center">
         <h1 className="font-heading text-[1.7rem] md:text-[2.5rem] leading-[1.1] font-black mb-4 tracking-tight">
-          Seu Filho Está Crescendo…{" "}
-          <span className="text-urgency">e Se Afastando?</span>
+          Não Deixe Seu Filho Crescer{" "}
+          <span className="text-urgency">Longe de Você.</span>
         </h1>
 
-        <p className="text-base md:text-lg text-foreground leading-relaxed mb-2 max-w-xl mx-auto font-semibold">
-          Descubra <strong className="text-primary">80+ Dinâmicas Simples</strong> que Criam{" "}
-          <span className="text-secondary font-extrabold">Conexão Real</span>{" "}
-          Mesmo Que Você Tenha Só 10 Minutos Por Dia.
-        </p>
-
-        <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-          Mesmo que sua rotina seja corrida, que ele esteja mais fechado ou que vocês quase não conversem mais como antes.
+        <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 max-w-xl mx-auto font-semibold">
+          Descubra <strong className="text-primary">80+ Dinâmicas Práticas</strong> Que Reconectam Pai e Filho em Apenas{" "}
+          <span className="text-secondary font-extrabold">10 Minutos Por Dia</span>{" "}
+          — Mesmo Com Rotina Corrida e Pouca Conversa.
         </p>
 
         {/* VSL 9:16 */}
