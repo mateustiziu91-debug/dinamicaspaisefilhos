@@ -68,7 +68,7 @@ const HeroSection = () => {
   return (
     <section className="bg-background pt-0 pb-10 px-4">
       {/* Full-width discount banner */}
-      <div className="w-screen relative left-1/2 -translate-x-1/2 bg-urgency text-urgency-foreground text-center py-2.5 px-4 mb-6">
+      <div className="w-screen relative left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-center py-2.5 px-4 mb-6">
         <p className="text-xs md:text-sm font-extrabold tracking-wide">
           🔥 DESCONTO SÓ HOJE — {new Date().toLocaleDateString("pt-BR")} 🔥
         </p>
