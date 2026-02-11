@@ -106,12 +106,12 @@ const OfferSection = () => {
               ))}
             </div>
 
-            <a
-              href="https://www.ggcheckout.com/checkout/v5/0WXgFXAbhlySK99UlqkI"
+            <button
+              onClick={() => setShowPopup(true)}
               className="flex items-center justify-center gap-2 bg-muted text-foreground font-bold text-sm w-full py-3 rounded-full border border-border cursor-pointer hover:bg-muted/80 active:scale-95 transition-all"
             >
               Quero o Básico
-            </a>
+            </button>
           </div>
         </div>
 
