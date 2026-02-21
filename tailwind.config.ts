@@ -81,11 +81,16 @@ export default {
           "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 hsl(152 65% 42% / 0.4)" },
           "50%": { transform: "scale(1.04)", boxShadow: "0 0 0 12px hsl(152 65% 42% / 0)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateX(16px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-grow": "pulse-grow 2.5s ease-in-out infinite",
+        "fade-in": "fade-in 0.4s ease-out",
       },
     },
   },
