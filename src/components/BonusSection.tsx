@@ -2,7 +2,7 @@ import CTAButton from "./CTAButton";
 import bonusAtividades from "@/assets/bonus-atividades-10min.jpg";
 import bonusCristas from "@/assets/bonus-dinamicas-cristas.jpg";
 import bonusConversas from "@/assets/bonus-guia-conversas.jpg";
-import bonusDesafio from "@/assets/bonus-desafio-30dias.jpg";
+import bonusDesafio from "@/assets/bonus-desafio-30dias-new.png";
 
 const bonuses = [
   {
@@ -35,7 +35,7 @@ const BonusSection = () => (
   <section className="py-14 px-4 bg-background">
     <div className="container max-w-2xl mx-auto text-center">
       <h2 className="font-heading text-2xl md:text-3xl font-black mb-1">
-        Bônus Exclusivos
+        Ganhe <span className="text-secondary">{bonuses.length} Bônus</span> Exclusivos
       </h2>
       <p className="text-muted-foreground text-sm mb-1">
         Valor Total: <span className="text-urgency font-bold line-through">R$168</span>
@@ -48,6 +48,10 @@ const BonusSection = () => (
             key={i}
             className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/15 rounded-2xl p-4 text-left shadow-sm"
           >
+            {/* Número do bônus */}
+            <div className="absolute -top-3 -left-2 bg-secondary text-secondary-foreground text-xs font-black w-7 h-7 rounded-full flex items-center justify-center shadow-md z-10">
+              {i + 1}
+            </div>
             <div className="flex items-start gap-4">
               <img
                 src={b.image}
@@ -55,6 +59,7 @@ const BonusSection = () => (
                 className="w-[55%] sm:w-1/2 h-56 object-cover rounded-xl shadow-md shrink-0"
               />
               <div className="flex-1 min-w-0">
+                <p className="text-secondary text-[10px] font-bold tracking-wide uppercase mb-0.5">Bônus {i + 1}</p>
                 <h3 className="font-heading font-bold text-foreground text-sm leading-tight">{b.title}</h3>
                 <p className="text-muted-foreground text-xs leading-relaxed mt-1">{b.desc}</p>
                 <div className="flex items-center gap-2 mt-2">
