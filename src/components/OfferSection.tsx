@@ -57,7 +57,7 @@ const OfferSection = () => {
             </div>
 
             <a
-              href="https://www.ggcheckout.com/checkout/v4/lehzbiappaSqrWX8VX0s"
+              href="https://www.ggcheckout.com/checkout/v5/lehzbiappaSqrWX8VX0s"
               className="flex items-center justify-center gap-2 bg-cta text-cta-foreground font-extrabold text-sm w-full py-4 rounded-full shadow-[0_4px_20px_hsl(152_65%_42%/0.35)] animate-pulse-grow cursor-pointer hover:brightness-110 active:scale-95 transition-all"
             >
               <ShoppingCart className="w-5 h-5" />
