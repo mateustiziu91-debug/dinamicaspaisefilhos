@@ -12,7 +12,7 @@ const FinalCTA = () => (
       <p className="text-white/50 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
         Clique no botão abaixo e comece hoje mesmo a reconstruir o vínculo com seu filho.
       </p>
-      <CTAButton text="QUERO COMEÇAR AGORA!" />
+      <CTAButton text="QUERO ACESSO IMEDIATO!" />
     </div>
   </section>
 );
