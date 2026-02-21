@@ -56,7 +56,7 @@ const BonusSection = () => (
               <img
                 src={b.image}
                 alt={b.title}
-                className="w-[55%] sm:w-1/2 h-56 object-cover rounded-xl shadow-md shrink-0"
+                className="w-2/5 sm:w-1/3 aspect-[3/4] object-cover rounded-xl shadow-md shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <p className="text-secondary text-[10px] font-bold tracking-wide uppercase mb-0.5">Bônus {i + 1}</p>
