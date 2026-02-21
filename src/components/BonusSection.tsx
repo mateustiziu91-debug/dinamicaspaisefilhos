@@ -1,8 +1,9 @@
 import CTAButton from "./CTAButton";
-import bonusAtividades from "@/assets/bonus-atividades-10min.jpg";
-import bonusCristas from "@/assets/bonus-dinamicas-cristas.jpg";
-import bonusConversas from "@/assets/bonus-guia-conversas.jpg";
-import bonusDesafio from "@/assets/bonus-desafio-30dias-new.png";
+import bonusAtividades from "@/assets/bonus-atividades-10min-new.png";
+import bonusDesafio from "@/assets/bonus-desafio-30dias-v2.png";
+import bonusConversas from "@/assets/bonus-guia-conversas-new.png";
+import bonusIgnora from "@/assets/bonus-filho-ignora.png";
+import bonusErros from "@/assets/bonus-erros-invisiveis.png";
 
 const bonuses = [
   {
@@ -12,9 +13,9 @@ const bonuses = [
     value: "R$37",
   },
   {
-    image: bonusCristas,
-    title: "30 Dinâmicas Cristãs",
-    desc: "Com versículo, reflexão e aplicação prática para famílias de fé.",
+    image: bonusDesafio,
+    title: "Desafio 30 Dias de Reconexão",
+    desc: "Um plano passo a passo para restaurar o vínculo em 1 mês.",
     value: "R$47",
   },
   {
@@ -24,10 +25,16 @@ const bonuses = [
     value: "R$37",
   },
   {
-    image: bonusDesafio,
-    title: "Desafio 30 Dias de Reconexão",
-    desc: "Um plano passo a passo para restaurar o vínculo em 1 mês.",
+    image: bonusIgnora,
+    title: "O Que Fazer Quando Seu Filho Te Ignora ou Se Afasta",
+    desc: "Estratégias práticas para reconquistar a atenção e o carinho do seu filho.",
     value: "R$47",
+  },
+  {
+    image: bonusErros,
+    title: "Erros Invisíveis que Afastam Seu Filho Sem Você Perceber",
+    desc: "Descubra os comportamentos que sabotam a conexão e como corrigi-los.",
+    value: "R$37",
   },
 ];
 
@@ -38,7 +45,7 @@ const BonusSection = () => (
         Ganhe <span className="text-secondary">{bonuses.length} Bônus</span> Exclusivos
       </h2>
       <p className="text-muted-foreground text-sm mb-1">
-        Valor Total: <span className="text-urgency font-bold line-through">R$168</span>
+        Valor Total: <span className="text-urgency font-bold line-through">R$205</span>
       </p>
       <p className="text-primary font-extrabold text-xl mb-8">(Hoje Grátis!)</p>
 
@@ -48,7 +55,6 @@ const BonusSection = () => (
             key={i}
             className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/15 rounded-2xl p-4 text-left shadow-sm"
           >
-            {/* Número do bônus */}
             <div className="absolute -top-3 -left-2 bg-secondary text-secondary-foreground text-xs font-black w-7 h-7 rounded-full flex items-center justify-center shadow-md z-10">
               {i + 1}
             </div>
@@ -74,7 +80,7 @@ const BonusSection = () => (
 
       <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/25 rounded-2xl py-3 px-5 inline-block mb-8">
         <p className="font-bold text-foreground text-sm">
-          Total em Bônus: <span className="text-urgency line-through">R$168</span>{" "}
+          Total em Bônus: <span className="text-urgency line-through">R$205</span>{" "}
           <span className="text-primary text-lg font-black">GRÁTIS HOJE!</span>
         </p>
       </div>

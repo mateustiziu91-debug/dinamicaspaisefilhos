@@ -76,15 +76,15 @@ const HeroSection = () => {
 
       <div className="container max-w-2xl mx-auto text-center">
         <h1 className="font-heading text-[1.8rem] md:text-[2.6rem] leading-[1.08] font-black mb-4 tracking-tight">
-          <span className="text-secondary text-[2.1rem] md:text-[3rem]">+80 Dinâmicas Prontas</span>
+          <span className="text-secondary text-[2.1rem] md:text-[3rem]">+150 Atividades Guiadas</span>
           <br />
-          para Reconectar Pais e Filhos
+          para Recuperar a Conexão
           <br />
-          <span className="text-secondary font-extrabold">+ Bônus Exclusivo</span>
+          com Seu Filho
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto font-semibold">
-          Atividades práticas que criam conexão real em apenas 10 minutos por dia — mesmo com rotina corrida.
+          Com o <strong className="text-foreground">Sistema Reconectar em 10 Minutos</strong>, você aplica atividades simples e poderosas que restauram o vínculo emocional — mesmo que seu filho esteja distante ou mais conectado ao celular do que a você.
         </p>
 
         {/* VSL 9:16 */}
@@ -94,7 +94,6 @@ const HeroSection = () => {
         >
           <div id="yt-player" className="absolute inset-0 w-full h-full" />
 
-          {/* Unmute overlay */}
           {muted && (
             <div
               className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer z-10"
@@ -107,7 +106,6 @@ const HeroSection = () => {
             </div>
           )}
 
-          {/* Small mute toggle when unmuted */}
           {!muted && (
             <button
               onClick={handleUnmute}

@@ -2,7 +2,7 @@ import { BookOpen, Smartphone, Printer, Layout, Moon, Gamepad2, Ear, MessageCirc
 import CTAButton from "./CTAButton";
 
 const items = [
-  { icon: BookOpen, title: "Material Completo em PDF", desc: "80+ dinâmicas organizadas e prontas para aplicar no dia a dia" },
+  { icon: BookOpen, title: "Material Completo em PDF", desc: "+150 atividades guiadas organizadas e prontas para aplicar no dia a dia" },
   { icon: Layout, title: "Práticas Estruturadas", desc: "Todas organizadas por situação, objetivo e tempo de duração" },
   { icon: Smartphone, title: "Acesso Digital Completo", desc: "Acesse por celular, tablet ou computador a qualquer hora" },
   { icon: Printer, title: "Pronto para Imprimir", desc: "Material formatado para impressão e uso durante seus momentos" },
@@ -15,21 +15,19 @@ const items = [
 const WhatYouGetSection = () => (
   <section className="py-16 px-4 bg-gradient-to-b from-muted to-background relative overflow-hidden">
     <div className="container max-w-2xl mx-auto relative z-10">
-      {/* Header */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary font-bold text-[11px] tracking-wide px-4 py-1.5 rounded-full mb-4">
           <Sparkles className="w-3.5 h-3.5" />
-          TUDO INCLUSO NO PACOTE
+          TUDO INCLUSO NO SISTEMA RECONECTAR
         </div>
         <h2 className="font-heading text-2xl md:text-3xl font-black mb-2">
           Veja <span className="text-secondary">Tudo</span> Que Você Vai Receber
         </h2>
         <p className="text-muted-foreground text-sm max-w-sm mx-auto">
-          Material completo para transformar a relação com seu filho 💛
+          +150 atividades guiadas para transformar a relação com seu filho 💛
         </p>
       </div>
 
-      {/* Items list */}
       <div className="space-y-3 mb-10">
         {items.map((item, i) => (
           <div

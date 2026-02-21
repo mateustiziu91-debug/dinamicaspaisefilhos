@@ -1,4 +1,4 @@
-import authorImg from "@/assets/author-luiza.jpg";
+import authorImg from "@/assets/author-luiza-new.png";
 
 const AuthorSection = () => (
   <section className="py-14 px-4 bg-muted">
